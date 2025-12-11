@@ -37,12 +37,12 @@ module.exports = defineConfig({
         patterns: [
           {
             from: path.resolve(__dirname, 'node_modules/@baidumap/mapv-three/dist/assets'),
-            to: path.resolve(__dirname, 'dist/mapvthree/assets'),
+            to: 'mapvthree/assets',
             noErrorOnMissing: true
           },
           {
             from: path.resolve(__dirname, 'node_modules/@baidumap/mapv-three/dist/libs'),
-            to: path.resolve(__dirname, 'dist/mapvthree/libs'),
+            to: 'mapvthree/libs',
             noErrorOnMissing: true
           }
         ]

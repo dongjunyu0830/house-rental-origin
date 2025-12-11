@@ -4,20 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="/house-rental-demo/favicon.ico">  <!-- 改这里 -->
-    <title>重庆渝中区房源可视化系统</title>
-
-    <!-- 百度地图脚本保持不变（它自己带域名） -->
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>House Rental</title>
     <script type="text/javascript"
             src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=Xeg4bBEw1i7zxUxefj6gwbb4qJZxDkWG"></script>
-
-    <!-- 关键：MapV 的静态资源路径改成绝对路径 -->
     <script>
-      // 开发时用 /mapvthree，生产环境也强制用绝对路径
-      window.MAPV_BASE_URL = '/house-rental-demo/mapvthree'
+      window.MAPV_BASE_URL = (process.env.NODE_ENV === 'production'
+        ? '/house-rental-demo/mapvthree'
+        : '/mapvthree')
     </script>
-
-    <!-- 以下 CDN 脚本保持不变 -->
     <script src="https://unpkg.com/mapvgl@latest/dist/mapvgl.min.js"></script>
     <script src="https://unpkg.com/mapvgl/dist/mapvgl.min.js"></script>
     <script src="https://unpkg.com/mapvgl/dist/mapvgl.threelayers.min.js"></script>
@@ -25,8 +20,10 @@
 </head>
 <body>
 <noscript>
-    <strong>We're sorry but House Rental doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
 </noscript>
 <div id="app"></div>
+<!-- built files will be auto injected -->
 </body>
 </html>
