@@ -1,26 +1,47 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import PropertyIllustration from '@/views/router/PropertyIllustration.vue'
+import RealsceneAnalysis from '@/views/router/RealsceneAnalysis.vue'
+import ThermalComparison from '@/views/router/ThermalComparison.vue'
+import ExchangeSquare from '@/views/router/ExchangeSquare.vue'
+import PropertyComparison from '@/views/router/PropertyComparison.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    redirect: '/PropertyIllustration'
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/PropertyIllustration',
+    component: PropertyIllustration,
+    meta: { depth: 1 }
+  },
+  {
+    path: '/RealsceneAnalysis',
+    component: RealsceneAnalysis,
+    meta: { depth: 2 }
+  },
+  {
+    path: '/ThermalComparison',
+    component: ThermalComparison,
+    meta: { depth: 3 }
+  },
+  {
+    path: '/ExchangeSquare',
+    component: ExchangeSquare,
+    meta: { depth: 4 }
+  },
+  {
+    path: '/PropertyComparison',
+    component: PropertyComparison,
+    meta: { depth: 5 }
   }
 ]
 
 const router = new VueRouter({
+  mode: 'hash',
   routes
 })
 
