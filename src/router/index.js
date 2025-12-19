@@ -5,6 +5,9 @@ import RealsceneAnalysis from '@/views/router/RealsceneAnalysis.vue'
 import ThermalComparison from '@/views/router/ThermalComparison.vue'
 import ExchangeSquare from '@/views/router/ExchangeSquare.vue'
 import PropertyComparison from '@/views/router/PropertyComparison.vue'
+import FindNews from '@/views/router/FindNews/index.vue'
+import PublishContent from '@/views/router/PublishContent/index.vue'
+import PersonalHomepage from '@/views/router/PersonalHomepage/index.vue'
 
 Vue.use(VueRouter)
 
@@ -31,6 +34,27 @@ const routes = [
   {
     path: '/ExchangeSquare',
     component: ExchangeSquare,
+    children: [
+      {
+        path: '',
+        redirect: 'FindNews'
+      },
+      {
+        path: 'FindNews',
+        name: 'FindNews',
+        component: FindNews
+      },
+      {
+        path: 'PublishContent',
+        name: 'PublishContent',
+        component: PublishContent
+      },
+      {
+        path: 'PersonalHomepage',
+        name: 'PersonalHomepage',
+        component: PersonalHomepage
+      }
+    ],
     meta: { depth: 4 }
   },
   {

@@ -41,29 +41,29 @@ export default {
       <el-menu
         ref="menu"
         router
-        default-active="PropertyIllustration"
+        default-active="/PropertyIllustration"
         class="el-menu-vertical-demo"
         background-color="#545c64"
         text-color="#fff"
         active-text-color="#ffd04b"
       >
-        <el-menu-item index="PropertyIllustration">
+        <el-menu-item index="/PropertyIllustration">
           <i class="el-icon-s-home"></i>
           <span slot="title">房源图示</span>
         </el-menu-item>
-        <el-menu-item index="RealsceneAnalysis">
+        <el-menu-item index="/RealsceneAnalysis">
           <i class="el-icon-location"></i>
           <span slot="title">实景分析</span>
         </el-menu-item>
-        <el-menu-item index="ThermalComparison">
+        <el-menu-item index="/ThermalComparison">
           <i class="el-icon-platform-eleme"></i>
           <span slot="title">热力比较</span>
         </el-menu-item>
-        <el-menu-item index="ExchangeSquare">
+        <el-menu-item index="/ExchangeSquare">
           <i class="el-icon-s-comment"></i>
           <span slot="title">交流广场</span>
         </el-menu-item>
-        <el-menu-item index="PropertyComparison">
+        <el-menu-item index="/PropertyComparison">
           <i class="el-icon-s-data"></i>
           <span slot="title">房源对比</span>
         </el-menu-item>
