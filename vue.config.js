@@ -4,7 +4,7 @@ const path = require('path')
 module.exports = defineConfig({
   transpileDependencies: true,
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/house-rental-demo/'
+    ? './'
     : '/',
   devServer: {
     static: {
